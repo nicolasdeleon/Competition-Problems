@@ -1,6 +1,8 @@
 #include <iostream>
 #include <bits/stdc++.h>
 
+// https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff08/0000000000387171
+
 using namespace std;
 
 int main() {
