@@ -9,19 +9,21 @@ typedef long long ll;
 
 
 int main() {
-    // Para calcular mi numero faltante resto la suma de todos los numeros
-    // hasta cierto numero n y con la suma de los numeros que se me pasan
-    ll n;
-    cin >> n;
-    ll total_sum_of_passed_numbers = 0;
-    for(int i=0; i<n-1; i++) {
-        int number;
-        cin >> number;
-        total_sum_of_passed_numbers += number;
+
+    string ADNchain;
+    cin >> ADNchain;
+    int max_sub_string = 0;
+    int temp = 0;
+    char sub_string = ADNchain[0];
+    for(unsigned int i=0; i<ADNchain.size(); i++) {
+        if(ADNchain[i] == sub_string) {
+            temp++;
+        } else {
+            sub_string = ADNchain[i];
+            temp = 1;
+        }
+        max_sub_string = max(max_sub_string, temp);
     }
-    ll actual_total = n*(n+1)/2;
-    ll missing = actual_total - total_sum_of_passed_numbers;
-    cout << missing;
+    cout << max_sub_string;
     return 0;
 }
-
